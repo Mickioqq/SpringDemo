@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--bean之间的继承关系 abstract标记该bean为一个抽象bean，不  能被IOC
+    实例化,只能用来继承配置-->
+    <bean id="city" class="com.wqq.spring.controller.Autowired.City"
+          p:address="ShangHai" p:street="JiangQiaoWanDa" abstract="true">
+
+    </bean>
+    <!--bean配置继承:使用bean的parent 指定哪个bean的配置-->
+    <bean id="city1" class="com.wqq.spring.controller.Autowired.City"
+           p:street="SOHO" parent="city">
+    </bean>
+    <!--bean依赖   要求配置Human时，必须依赖car-->
+    <bean id="human" class="com.wqq.spring.controller.Autowired.Human"
+     p:name="江生" p:city-ref="city1" depends-on="car">
+    </bean>
+
+    <bean id="car" class="com.wqq.spring.controller.Autowired.Car" p:brand="Ford" p:price="150000">
+    </bean>
+</beans>

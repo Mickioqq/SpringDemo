@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+    <bean id="person" class="com.wqq.spring.controller.collection.Person">
+        <property name="name" value="mike"></property>
+        <property name="age" value="26"></property>
+        <!--配置list集合属性值-->
+        <property name="computers">
+            <list>
+                <ref bean="computer"></ref>
+                <ref bean="computer"></ref>
+            </list>
+        </property>
+
+    </bean>
+    <bean id="computer" class="com.wqq.spring.controller.collection.Computer">
+      <constructor-arg value="daier"></constructor-arg>
+      <constructor-arg value="2"></constructor-arg>
+    </bean>
+    <!--配置map集合属性值，map的entry-->
+    <bean id="newPerson" class="com.wqq.spring.controller.collection.NewPerson">
+        <property name="name" value="jeson"></property>
+        <property name="age" value="25"></property>
+        <property name="computers">
+            <map>
+                <entry key="daier" value-ref="computer"></entry>
+                <entry key="mac" value-ref="computer"></entry>
+            </map>
+        </property>
+
+    </bean>
+    <!--配置properties属性值-->
+    <bean id="dataSource" class="com.wqq.spring.controller.collection.DataSource">
+        <property name="properties">
+            <props>
+                <prop key="username">root</prop>
+                <prop key="password">123456</prop>
+                <prop key="jdbcUrl">jdbc:mysql///test</prop>
+                <prop key="driverClass">com.jdbc.Driver</prop>
+            </props>
+        </property>
+    </bean>
+    <!--配置单独的集合bean,以供多个bean进行引用-->
+    <util:list id="computerlist">
+        <ref bean="computer"></ref>
+        <ref bean="computer"></ref>
+    </util:list>
+    <bean id="person1" class="com.wqq.spring.controller.collection.Person">
+        <property name="name" value="rose"></property>
+        <property name="age" value="25"></property>
+        <property name="computers" ref="computerlist"></property>
+    </bean>
+    <!--通过p命名空间为bean属性赋值，需要先导入p命名空间,相对于传统的配置更加便捷-->
+    <bean id="person2" class="com.wqq.spring.controller.collection.Person" p:name="奇奇" p:age="22"
+       p:computers-ref="computerlist">
+    </bean>
+</beans>

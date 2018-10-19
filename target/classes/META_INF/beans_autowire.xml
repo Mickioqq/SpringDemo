@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="city1" class="com.wqq.spring.controller.Autowired.City"
+          p:address="ShangHai1" p:street="LingKongSoHo1">
+    </bean>
+    <bean id="city" class="com.wqq.spring.controller.Autowired.City"
+          p:address="ShangHai" p:street="LingKongSoHo">
+    </bean>
+    <bean id="car" class="com.wqq.spring.controller.Autowired.Car"
+        p:brand="Audi" p:price="300000">
+    </bean>
+    <!--spring自动装配 autowired-->
+    <bean id="human" class="com.wqq.spring.controller.Autowired.Human"
+        p:name="奇奇" p:city-ref="city1" p:car-ref="car">
+    </bean>
+    <!--spring根据名字自动装配,byName 根据 bean 的名字和当前bean 的setter 风格的属性名进行自动装配，
+        若有匹配的，则进行自动装配
+    -->
+    <bean id="human1" class="com.wqq.spring.controller.Autowired.Human"
+          autowire="byName">
+    </bean>
+    <!-- byType 根据bean的类型和当前bean的属性类型进行自动装配，若IOC容器中有
+      一个以上的类型匹配，则报异常
+    -->
+    <bean id="human2" class="com.wqq.spring.controller.Autowired.Human"
+          autowire="byType">
+    </bean>
+
+    <!--autowired缺点
+    1：
+    -->
+</beans>

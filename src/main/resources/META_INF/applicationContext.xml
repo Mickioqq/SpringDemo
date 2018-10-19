@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--
+        class:bean全类名,通过反射方式在IOC容器中创建Bean,所以要求Bean中必须有无参的构造器
+        id:
+    -->
+    <bean id="helloWorld" class="com.wqq.spring.controller.HelloWorld">
+        <!--属性注入-->
+        <property name="name" value="spring">
+        </property>
+    </bean>
+    <bean id="newCar" class="com.wqq.spring.controller.NewCar">
+        <!--构造器注入-->
+        <constructor-arg value="BM" index="0"></constructor-arg>
+        <constructor-arg value="苏E23HS9" index="1"></constructor-arg>
+        <constructor-arg value="300000" type="double"></constructor-arg>
+    </bean>
+    <bean id="newCar1" class="com.wqq.spring.controller.NewCar">
+        <!--构造器注入,可以指定参数位置和类型，区分重载的构造器-->
+        <constructor-arg value="BM" type="java.lang.String"></constructor-arg>
+        <constructor-arg value="苏E23HS9" type="java.lang.String"></constructor-arg>
+        <!--如果字符值包含特殊字符,可以使用<![CDATA[]]>包裹起来
+        <constructor-arg type="java.lang.String">
+            <value><![CDATA[<苏E23HS9~>]]></value>
+        </constructor-arg>
+          -->
+        <!--下面两种方式都可以赋值,可以使用value子节点配置
+        <constructor-arg value="240" type="int"></constructor-arg>
+         -->
+        <constructor-arg type="int">
+            <value>250</value>
+        </constructor-arg>
+    </bean>
+    <bean id="person" class="com.wqq.spring.controller.NewCar$Person">
+            <property name="name" value="Mike"></property>
+            <property name="age" value="26"></property>
+        <!--bean之间相互引用,通过ref,或者通过下面ref属性
+            <property name="newCar" ref="newCar"></property>
+
+            <property name="newCar">
+            <ref bean="newCar"></ref>
+            </property>
+         -->
+
+        <!--创建内部Bean-->
+        <property name="newCar">
+            <bean class="com.wqq.spring.controller.NewCar">
+            <constructor-arg value="ford"></constructor-arg>
+            <constructor-arg value="苏E23HS9" type="java.lang.String"></constructor-arg>
+                <constructor-arg type="int">
+                    <value>250</value>
+                </constructor-arg>
+            </bean>
+        </property>
+
+    </bean>
+    <bean id="person2" class="com.wqq.spring.controller.NewCar$Person">
+        <constructor-arg value="mike"></constructor-arg>
+        <constructor-arg value="26"></constructor-arg>
+        <constructor-arg ref="newCar"></constructor-arg>
+        <!--为级联属性赋值-->
+        <property name="newCar.brand" value="法拉利"></property>
+        <!--null赋值
+         <constructor-arg><null/></constructor-arg>
+         -->
+    </bean>
+
+</beans>
