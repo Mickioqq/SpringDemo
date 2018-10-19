@@ -12,14 +12,11 @@
     <bean id="city1" class="com.wqq.spring.controller.Autowired.City"
            p:street="SOHO" parent="city">
     </bean>
-    <!--bean依赖-->
+    <!--bean依赖   要求配置Human时，必须依赖car-->
     <bean id="human" class="com.wqq.spring.controller.Autowired.Human"
-     p:name="江生" p:city-ref="city1" depends-on="car"
-
-    ></bean>
+     p:name="江生" p:city-ref="city1" depends-on="car">
+    </bean>
 
     <bean id="car" class="com.wqq.spring.controller.Autowired.Car" p:brand="Ford" p:price="150000">
-
-
     </bean>
 </beans>
