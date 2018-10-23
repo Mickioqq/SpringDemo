@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    <!--beanfactory后置器,导入属性文件-->
+    <context:property-placeholder location="classpath:car.properties"/>
+
+    <!--使用外部属性文件-->
+    <bean id="car" class="com.wqq.spring.controller.Autowired.Car"
+      p:brand="${brand}" p:price="${price}">
+    </bean>
+</beans>

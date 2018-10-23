@@ -7,7 +7,7 @@ public class BeanPostProcessor implements org.springframework.beans.factory.conf
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
         System.out.println("postProcessBeforeInitialization" + bean + beanName);
-        //这里处理所有bean,过滤
+        //这里默认处理所有bean,过滤一下
         if ("car".equalsIgnoreCase(beanName)){
             //......
         }
