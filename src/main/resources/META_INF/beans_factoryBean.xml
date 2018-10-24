@@ -2,7 +2,11 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <!--通过FactoryBean 来配置-->
+    <!--通过FactoryBean 来配置
+        class:指向factorybean的全类名
+        property:配置FactoryBean的属性
+        但实际返回的的实例是FactoryBean的getobject方法返回的实例
+     -->
     <bean id="car" class="com.wqq.spring.controller.bean_factory.CarFactoryBean">
         <property name="brand" value="BWM"></property>
     </bean>

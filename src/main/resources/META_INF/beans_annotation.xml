@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+    <!--指定Spring IOC 容器扫描的包
+        扫描当前包及所有子包下的类
+    -->
+
+        <context:component-scan base-package="com.wqq.spring.controller.annotation"></context:component-scan>
+
+    <!--通过resource-pattern 指定扫描资源
+    <context:component-scan base-package="com.wqq.spring.controller.annotation" resource-pattern="annotation/*.class">
+
+    </context:component-scan>
+    -->
+    <!--context:exclude-filter 子节点指定排除哪些指定表达式的组件-->
+    <!--context:include-filter 节点指定包含哪些指定表达式的组件,该子节点需要配合 use-default-filters使用
+       annotation:对注解进行扫描
+       assignable:对类或接口进行扫描
+
+    <context:component-scan base-package="com.wqq.spring.controller.annotation" use-default-filters="false">
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
+
+    </context:component-scan>
+
+    <context:component-scan base-package="com.wqq.spring.controller.annotation">
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
+        <context:include-filter type="assignable" expression="com.wqq.spring.controller.annotation.UserRepoistory"/>
+    </context:component-scan>
+        -->
+</beans>
