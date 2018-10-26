@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fba0a0f2-2a2e-4dfb-adb2-66debf692947" name="Default Changelist" comment="java三种代理,aop原理">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wqq/spring/controller/spring_aop/before/LoggingAspect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wqq/spring/controller/spring_aop/before/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/wqq/spring/controller/spring_aop/before/UserDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META_INF/beans_aop.xml" afterDir="false" />
+    <list default="true" id="fba0a0f2-2a2e-4dfb-adb2-66debf692947" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wqq/spring/controller/spring_aop/before/LoggingAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wqq/spring/controller/spring_aop/before/LoggingAspect.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -32,16 +28,16 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="6687" />
+          <entry key="java" value="6801" />
           <entry key="properties" value="24" />
-          <entry key="txt" value="39" />
+          <entry key="txt" value="47" />
           <entry key="xml" value="4214" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="6687" />
-          <entry key="PLAIN_TEXT" value="39" />
+          <entry key="JAVA" value="6801" />
+          <entry key="PLAIN_TEXT" value="47" />
           <entry key="Properties" value="24" />
           <entry key="XML" value="4214" />
         </counts>
@@ -103,8 +99,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/wqq/spring/controller/spring_aop/before/LoggingAspect.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+            <state relative-caret-position="864">
+              <caret line="41" column="26" selection-start-line="41" selection-start-column="21" selection-end-line="41" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -124,8 +120,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/wqq/spring/controller/spring_aop/before/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="27">
-              <caret line="14" column="2" lean-forward="true" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
+            <state relative-caret-position="598">
+              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -380,7 +376,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540444657940" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540524888122" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -505,7 +501,7 @@
       <workItem from="1540172227315" duration="5695000" />
       <workItem from="1540189573886" duration="12895000" />
       <workItem from="1540271936262" duration="18264000" />
-      <workItem from="1540433651213" duration="6494000" />
+      <workItem from="1540433651213" duration="8966000" />
     </task>
     <task id="LOCAL-00001" summary="bean之间的联系">
       <created>1539945354225</created>
@@ -535,11 +531,18 @@
       <option name="project" value="LOCAL" />
       <updated>1540433696371</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="aop 前置通知">
+      <created>1540444686430</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1540444686430</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74099000" />
+    <option name="totallyTimeSpent" value="76571000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -554,7 +557,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4994612" visible="true" weight="0.32936978" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4994612" weight="0.32936978" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -617,7 +620,8 @@
     <MESSAGE value="bean之间的联系" />
     <MESSAGE value="codefix" />
     <MESSAGE value="java三种代理,aop原理" />
-    <option name="LAST_COMMIT_MESSAGE" value="java三种代理,aop原理" />
+    <MESSAGE value="aop 前置通知" />
+    <option name="LAST_COMMIT_MESSAGE" value="aop 前置通知" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/com/wqq/spring/controller/Autowired/Main.java">
@@ -992,8 +996,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/wqq/spring/controller/spring_aop/before/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="14" column="2" lean-forward="true" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
+        <state relative-caret-position="598">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1002,8 +1006,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/wqq/spring/controller/spring_aop/before/LoggingAspect.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+        <state relative-caret-position="864">
+          <caret line="41" column="26" selection-start-line="41" selection-start-column="21" selection-end-line="41" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
